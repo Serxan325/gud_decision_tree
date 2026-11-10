@@ -33,21 +33,27 @@ Gini Impurity measures how mixed the classes are in a dataset.
 
 The formula is:
 
-\[
+$$
 Gini = 1 - \sum_{i=1}^{n} p_i^2
-\]
+$$
 
 Where:
-- \(p_i\) is the proportion of samples belonging to class \(i\).
+- $p_i$ is the proportion of samples belonging to class $i$.
 - A Gini value of 0 means the dataset is completely pure.
 
 For each possible split, the algorithm calculates:
 
-\[
+$$
 Gini_{split} =
-\frac{N_L}{N}Gini_L +
-\frac{N_R}{N}Gini_R
-\]
+\frac{N_L}{N} \times Gini_L +
+\frac{N_R}{N} \times Gini_R
+$$
+
+Where:
+- $N$ is the total number of samples.
+- $N_L$ is the number of samples in the left child.
+- $N_R$ is the number of samples in the right child.
+- $Gini_L$ and $Gini_R$ are the Gini impurities of the two child nodes.
 
 The split with the lowest weighted Gini impurity is selected.
 
